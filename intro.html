@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cafe Homepage</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* About Us Button */
+  .about-modern {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    padding: 10px 28px;
+    background: rgba(255, 216, 122, 0.85);
+    backdrop-filter: blur(6px);
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    z-index: 1;
+  }
+
+  .about-modern:hover {
+    background: #ffcb47;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  /* Dark overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.35);
+  }
+
+  /* Main container */
+  .hero-content {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    top: 30vh;
+    left: 8vw;
+    color: #FFF4D5;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease;
+  }
+
+  .hero-heading {
+    font-size: 60px;
+    font-weight: 700;
+    color: #FFD87A;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-right: 15px;
+    background-color: #FFD87A;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #ffcb47;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 600px) {
+    .hero-content {
+      left: 5vw;
+      top: 20vh;
+      width: 85%;
+    }
+    .hero-heading {
+      font-size: 40px;
+    }
+    .hero-text {
+      font-size: 18px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<a href="about.html" class="about-modern">About Us</a>
+
+<div class="overlay"></div>
+
+<div class="hero-content" id="content">
+  <h1 class="hero-heading" id="typewriter"></h1>
+  <p class="hero-text">
+    Fresh aromas, handcrafted brews, and delightful bites come together to
+    create the perfect cafe experience.
+  </p>
+
+  <a href="order1.html" class="btn" onclick="order()">Order Now</a>
+  <a href="contact.html" class="btn" onclick="contact()">Contact us</a>
+</div>
+
+<script>
+  window.onload = () => {
+    const section = document.getElementById("content");
+    section.style.opacity = 1;
+    section.style.transform = "translateY(0)";
+  };
+
+  const text = "Welcome to Our Cafe";
+  let i = 0;
+
+  function typeWrite() {
+    if (i < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWrite, 80);
+    }
+  }
+  typeWrite();
+</script>
+
+</body>
+</html>

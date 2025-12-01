@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff9e9;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid #e4d6b5;
+    border-radius: 8px;
+  }
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #6a4a18;
+  }
+
+  label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #6a4a18;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d4c399;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 15px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  button {
+    margin-top: 16px;
+    background: #c49a54;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .error {
+    color: #b33939;
+    font-size: 14px;
+    display: none;
+    margin-top: 4px;
+  }
+
+  .success {
+    color: green;
+    font-size: 16px;
+    margin-top: 12px;
+    text-align: center;
+    display: none;
+  }
+
+  /* Contact info section */
+  .info-box{
+    margin-top: 18px;
+    padding: 14px;
+    background: #fff3d5;
+    border-radius: 6px;
+    border: 1px solid #e4d6b5;
+  }
+
+  .info-box p{
+    margin: 6px 0;
+    color: #6a4a18;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2>Contact Us</h2>
+
+  <form id="contactForm">
+    <label>Your Name</label>
+    <input type="text" id="name">
+    <div class="error" id="nameError">Please enter your name.</div>
+
+    <label>Email</label>
+    <input type="email" id="email">
+    <div class="error" id="emailError">Please enter a valid email.</div>
+
+    <label>Message</label>
+    <textarea id="message"></textarea>
+    <div class="error" id="messageError">Please enter your message.</div>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <div class="success" id="successMsg">✔ Message sent successfully!</div>
+
+  <div class="info-box">
+    <p><b>📍 Address:</b> Dahegam, Gandhinagar, Gujarat</p>
+    <p><b>📞 Phone:</b> +91 84888 09079</p>
+    <p><b>✉ Email:</b> cafe@gmail.com</p>
+  </div>
+
+</div>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Input fields
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Error fields
+    const nameErr = document.getElementById("nameError");
+    const emailErr = document.getElementById("emailError");
+    const msgErr = document.getElementById("messageError");
+    const successMsg = document.getElementById("successMsg");
+
+    // Reset errors
+    nameErr.style.display = "none";
+    emailErr.style.display = "none";
+    msgErr.style.display = "none";
+    successMsg.style.display = "none";
+
+    let valid = true;
+
+    if(name === ""){
+      nameErr.style.display = "block";
+      valid = false;
+    }
+
+    if(email === "" || !email.includes("@")){
+      emailErr.style.display = "block";
+      valid = false;
+    }
+
+    if(message === ""){
+      msgErr.style.display = "block";
+      valid = false;
+    }
+
+    // On success
+    if(valid){
+      successMsg.style.display = "block";
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff8e9;
+    color: #5a3b13;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    color: #4a2f0c;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #8b6a3b;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  /* Image */
+  .about-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  /* Content Box */
+  .about-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e3d3b4;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+  }
+
+  /* Mission and Vision */
+  .mv-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff3d5;
+    border-radius: 10px;
+    border: 1px solid #e9d4a6;
+  }
+
+  .mv-box h3 {
+    margin: 0 0 8px;
+    color: #6a4a18;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>About Us</h1>
+  <p class="subtitle">A small story behind our big flavors</p>
+
+  <!-- Cafe Image -->
+  <img src="about.jpeg" class="about-img" alt="Cafe">
+
+  <!-- Main About Box -->
+  <div class="about-box" id="aboutBox">
+    <p>
+      Welcome to our cafe — a cozy space built with love for coffee, comfort, and community.  
+      Our journey started with a simple idea: to create a place where people can relax, enjoy
+      handcrafted brews, and feel at home.
+    </p>
+
+    <p>
+      Every cup we serve is made from carefully selected beans, freshly brewed to bring out the
+      perfect taste. Whether you're here to work, chat with friends, or just enjoy a peaceful moment,
+      we are always happy to serve you.
+    </p>
+
+    <p>
+      With warm interiors, friendly staff, and flavors crafted with passion —  
+      our cafe is more than a place, it’s an experience.
+    </p>
+
+    <!-- Mission -->
+    <div class="mv-box">
+      <h3>🎯 Our Mission</h3>
+      <p>To serve delicious beverages and snacks while creating a warm and welcoming atmosphere for everyone.</p>
+    </div>
+
+    <!-- Vision -->
+    <div class="mv-box">
+      <h3>🌿 Our Vision</h3>
+      <p>To become your favorite everyday cafe — where great taste meets comfort and community.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Fade-in animation for About Box
+  window.onload = () => {
+    document.getElementById("aboutBox").style.opacity = "1";
+    document.getElementById("aboutBox").style.transform = "translateY(0)";
+  };
+</script>
+
+</body>
+</html>
